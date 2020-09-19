@@ -18,7 +18,7 @@ function App() {
     <>
       <div className={classes.pageContainer}>
           <InputSection />
-          <OutputSection />
+          {/* <OutputSection /> */}
       </div>
     </>
   );
