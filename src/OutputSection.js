@@ -1,7 +1,10 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 import ColourDisplayBox from "./ColourDisplayBox";
-import OutputFields from "./OutputFields";
+import RgbField from "./ColourFields/RgbField";
+import HexField from "./ColourFields/HexField";
+import HslField from "./ColourFields/HslField";
+import CmykField from "./ColourFields/CmykField";
 
 const OutputSection = () => {
   const colour = "#ffffff";
@@ -11,7 +14,10 @@ const OutputSection = () => {
       <div>
         <Typography>Complementary Colour</Typography>
         <ColourDisplayBox colour={colour} />
-        <OutputFields />
+        <RgbField />
+        <HexField />
+        <HslField />
+        <CmykField />
       </div>
     </>
   );

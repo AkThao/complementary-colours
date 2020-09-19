@@ -6,6 +6,8 @@ import OutputSection from "./OutputSection";
 const useStyles = makeStyles(() => ({
   pageContainer: {
     display: "flex",
+    justifyContent: "space-around",
+    padding: 10,
   },
 }));
 

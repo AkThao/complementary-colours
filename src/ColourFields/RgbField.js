@@ -1,11 +1,10 @@
 import React from "react";
 import { TextField, Typography } from "@material-ui/core";
 
-const InputFields = () => {
+const RgbField = () => {
   return (
     <>
       <Typography>RGB</Typography>
-      <Typography>#</Typography>
       <TextField
         variant="outlined"
         inputProps={{ maxLength: 2 }}
@@ -25,4 +24,4 @@ const InputFields = () => {
   );
 };
 
-export default InputFields;
+export default RgbField;

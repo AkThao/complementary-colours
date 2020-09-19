@@ -1,11 +1,10 @@
 import React from "react";
 import { TextField, Typography } from "@material-ui/core";
 
-const OutputFields = () => {
+const HexField = () => {
   return (
     <>
-      <Typography>RGB</Typography>
-      <Typography>#</Typography>
+      <Typography>Hex (#)</Typography>
       <TextField
         variant="outlined"
         inputProps={{ maxLength: 2 }}
@@ -25,4 +24,4 @@ const OutputFields = () => {
   );
 };
 
-export default OutputFields;
+export default HexField;
