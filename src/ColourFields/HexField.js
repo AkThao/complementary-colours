@@ -7,21 +7,21 @@ const HexField = (props) => {
       <Typography>Hex (#)</Typography>
       <TextField
         variant="outlined"
-        inputProps={{ maxLength: 2 }}
         placeholder="00"
         onChange={props.onChangeR}
-      />
+        value={props.value[0]}
+        />
       <TextField
         variant="outlined"
-        inputProps={{ maxLength: 2 }}
         placeholder="00"
         onChange={props.onChangeG}
-      />
+        value={props.value[1]}
+        />
       <TextField
         variant="outlined"
-        inputProps={{ maxLength: 2 }}
         placeholder="00"
         onChange={props.onChangeB}
+        value={props.value[2]}
       />
     </>
   );

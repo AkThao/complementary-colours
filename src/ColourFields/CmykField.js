@@ -11,10 +11,13 @@ const CmykField = (props) => {
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
         inputProps={{
-          maxLength: 3,
+          min: 0,
+          max: 100,
         }}
+        type="number"
         placeholder="0%"
         onChange={props.onChangeC}
+        value={props.value[0]}
       />
       <TextField
         variant="outlined"
@@ -22,21 +25,27 @@ const CmykField = (props) => {
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
         inputProps={{
-          maxLength: 3,
+          min: 0,
+          max: 100,
         }}
+        type="number"
         placeholder="0%"
         onChange={props.onChangeM}
+        value={props.value[1]}
       />
       <TextField
         variant="outlined"
         InputProps={{
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
+        type="number"
         inputProps={{
-          maxLength: 3,
+          min: 0,
+          max: 100,
         }}
         placeholder="0%"
         onChange={props.onChangeY}
+        value={props.value[2]}
       />
       <TextField
         variant="outlined"
@@ -44,10 +53,13 @@ const CmykField = (props) => {
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
         inputProps={{
-          maxLength: 3,
+          min: 0,
+          max: 100,
         }}
+        type="number"
         placeholder="0%"
         onChange={props.onChangeK}
+        value={props.value[3]}
       />
     </>
   );

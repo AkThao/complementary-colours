@@ -7,24 +7,27 @@ const RgbField = (props) => {
       <Typography>RGB</Typography>
       <TextField
         variant="outlined"
-        inputProps={{ min: 0, max: 255, maxLength: 3 }}
+        inputProps={{ min: 0, max: 255 }}
         placeholder="000"
         type="number"
         onChange={props.onChangeR}
-      />
+        value={props.value[0]}
+        />
       <TextField
         variant="outlined"
-        inputProps={{ min: 0, max: 255, maxLength: 3 }}
+        inputProps={{ min: 0, max: 255 }}
         placeholder="000"
         type="number"
         onChange={props.onChangeG}
-      />
+        value={props.value[1]}
+        />
       <TextField
         variant="outlined"
-        inputProps={{ min: 0, max: 255, maxLength: 3 }}
+        inputProps={{ min: 0, max: 255 }}
         placeholder="000"
         type="number"
         onChange={props.onChangeB}
+        value={props.value[2]}
       />
     </>
   );

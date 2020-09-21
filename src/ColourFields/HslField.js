@@ -15,10 +15,13 @@ const HslField = (props) => {
           ),
         }}
         inputProps={{
-          maxLength: 3,
+          min: 0,
+          max: 360,
         }}
+        type="number"
         placeholder={`0${String.fromCharCode(176)}`}
         onChange={props.onChangeH}
+        value={props.value[0]}
       />
       <TextField
         variant="outlined"
@@ -26,10 +29,13 @@ const HslField = (props) => {
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
         inputProps={{
-          maxLength: 3,
+          min: 0,
+          max: 100,
         }}
+        type="number"
         placeholder="0%"
         onChange={props.onChangeS}
+        value={props.value[1]}
       />
       <TextField
         variant="outlined"
@@ -37,10 +43,13 @@ const HslField = (props) => {
           endAdornment: <InputAdornment position="end">%</InputAdornment>,
         }}
         inputProps={{
-          maxLength: 3,
+          min: 0,
+          max: 100,
         }}
+        type="number"
         placeholder="0%"
         onChange={props.onChangeL}
+        value={props.value[2]}
       />
     </>
   );
