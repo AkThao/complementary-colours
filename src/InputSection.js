@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import convert from "color-convert";
 import { Typography } from "@material-ui/core";
 import ColourDisplayBox from "./ColourDisplayBox";
 import RgbField from "./ColourFields/RgbField";
@@ -35,17 +36,22 @@ const InputSection = () => {
     lastColourUpdated,
   ]);
 
+  const convertColours = (prop) => {
+    console.log(prop);
+  };
+
   const handleChange = (prop) => (e) => {
     if (e.target.value === "") {
       setState({ ...state, [prop]: 0 });
     } else {
       setState({ ...state, [prop]: e.target.value });
     }
-    if (prop.slice(0, 3) === "rgb") {
+    if (prop === "rgb") {
       setLastColourUpdated(0);
-    } else if (prop.slice(0, 3) === "hex") {
+    } else if (prop === "hex") {
       setLastColourUpdated(1);
     }
+    convertColours(prop);
   };
 
   return (
@@ -54,17 +60,26 @@ const InputSection = () => {
         <Typography>Input Colour</Typography>
         <ColourDisplayBox colour={colour} />
         <RgbField
-          onChangeR={handleChange("rgbR")}
-          onChangeG={handleChange("rgbG")}
-          onChangeB={handleChange("rgbB")}
+          onChangeR={handleChange("rgb")}
+          onChangeG={handleChange("rgb")}
+          onChangeB={handleChange("rgb")}
         />
         <HexField
-          onChangeR={handleChange("hexR")}
-          onChangeG={handleChange("hexG")}
-          onChangeB={handleChange("hexB")}
+          onChangeR={handleChange("hex")}
+          onChangeG={handleChange("hex")}
+          onChangeB={handleChange("hex")}
         />
-        <HslField />
-        <CmykField />
+        <HslField
+          onChangeH={handleChange("hsl")}
+          onChangeS={handleChange("hsl")}
+          onChangeL={handleChange("hsl")}
+        />
+        <CmykField
+          onChangeC={handleChange("cmyk")}
+          onChangeM={handleChange("cmyk")}
+          onChangeY={handleChange("cmyk")}
+          onChangeK={handleChange("cmyk")}
+        />
       </div>
     </>
   );

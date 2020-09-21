@@ -1,29 +1,53 @@
 import React from "react";
-import { TextField, Typography } from "@material-ui/core";
+import { TextField, Typography, InputAdornment } from "@material-ui/core";
 
-const CmykField = () => {
+const CmykField = (props) => {
   return (
     <>
       <Typography>CMYK</Typography>
       <TextField
         variant="outlined"
-        inputProps={{ maxLength: 3 }}
+        InputProps={{
+          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+        }}
+        inputProps={{
+          maxLength: 3,
+        }}
         placeholder="0%"
+        onChange={props.onChangeC}
       />
       <TextField
         variant="outlined"
-        inputProps={{ maxLength: 3 }}
+        InputProps={{
+          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+        }}
+        inputProps={{
+          maxLength: 3,
+        }}
         placeholder="0%"
+        onChange={props.onChangeM}
       />
       <TextField
         variant="outlined"
-        inputProps={{ maxLength: 3 }}
+        InputProps={{
+          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+        }}
+        inputProps={{
+          maxLength: 3,
+        }}
         placeholder="0%"
+        onChange={props.onChangeY}
       />
       <TextField
         variant="outlined"
-        inputProps={{ maxLength: 3 }}
+        InputProps={{
+          endAdornment: <InputAdornment position="end">%</InputAdornment>,
+        }}
+        inputProps={{
+          maxLength: 3,
+        }}
         placeholder="0%"
+        onChange={props.onChangeK}
       />
     </>
   );
