@@ -27,26 +27,6 @@ const InputSection = () => {
     cmykK: 0,
   });
 
-  useEffect(() => {
-    convertColours();
-    setColour(`rgb(${state.rgbR}, ${state.rgbG}, ${state.rgbB})`);
-  }, [
-    state.rgbR,
-    state.rgbG,
-    state.rgbB,
-    state.hexR,
-    state.hexG,
-    state.hexB,
-    state.hslH,
-    state.hslS,
-    state.hslL,
-    state.cmykC,
-    state.cmykM,
-    state.cmykY,
-    state.cmykK,
-    lastColourUpdated,
-  ]);
-
   const updateRgb = (newRgb) => {
     setState((state) => ({ ...state, rgbR: newRgb[0] }));
     setState((state) => ({ ...state, rgbG: newRgb[1] }));
@@ -72,55 +52,6 @@ const InputSection = () => {
     setState((state) => ({ ...state, cmykK: newCmyk[3] }));
   };
 
-  const convertColours = () => {
-    if (lastColourUpdated === 0) {
-      let newHex = convert.rgb.hex(state.rgbR, state.rgbG, state.rgbB);
-      let newHsl = convert.rgb.hsl(state.rgbR, state.rgbG, state.rgbB);
-      let newCmyk = convert.rgb.cmyk(state.rgbR, state.rgbG, state.rgbB);
-      updateHex(newHex);
-      updateHsl(newHsl);
-      updateCmyk(newCmyk);
-    } else if (lastColourUpdated === 1) {
-      let newRgb = convert.hex.rgb(`#${state.hexR}${state.hexG}${state.hexB}`);
-      let newHsl = convert.hex.hsl(`#${state.hexR}${state.hexG}${state.hexB}`);
-      let newCmyk = convert.hex.cmyk(
-        `#${state.hexR}${state.hexG}${state.hexB}`
-      );
-      updateRgb(newRgb);
-      updateHsl(newHsl);
-      updateCmyk(newCmyk);
-    } else if (lastColourUpdated === 2) {
-      let newRgb = convert.hsl.rgb(state.hslH, state.hslS, state.hslL);
-      let newHex = convert.hsl.hex(state.hslH, state.hslS, state.hslL);
-      let newCmyk = convert.hsl.cmyk(state.hslH, state.hslS, state.hslL);
-      updateRgb(newRgb);
-      updateHex(newHex);
-      updateCmyk(newCmyk);
-    } else if (lastColourUpdated === 3) {
-      let newRgb = convert.cmyk.rgb(
-        state.cmykC,
-        state.cmykM,
-        state.cmykY,
-        state.cmykK
-      );
-      let newHex = convert.cmyk.hex(
-        state.cmykC,
-        state.cmykM,
-        state.cmykY,
-        state.cmykK
-      );
-      let newHsl = convert.cmyk.hsl(
-        state.cmykC,
-        state.cmykM,
-        state.cmykY,
-        state.cmykK
-      );
-      updateRgb(newRgb);
-      updateHex(newHex);
-      updateHsl(newHsl);
-    }
-  };
-
   const handleChange = (prop) => (e) => {
     if (e.target.value === "") {
       setState({ ...state, [prop]: 0 });
@@ -142,6 +73,78 @@ const InputSection = () => {
       setLastColourUpdated(3);
     }
   };
+
+  useEffect(() => {
+    const convertColours = () => {
+      if (lastColourUpdated === 0) {
+        let newHex = convert.rgb.hex(state.rgbR, state.rgbG, state.rgbB);
+        let newHsl = convert.rgb.hsl(state.rgbR, state.rgbG, state.rgbB);
+        let newCmyk = convert.rgb.cmyk(state.rgbR, state.rgbG, state.rgbB);
+        updateHex(newHex);
+        updateHsl(newHsl);
+        updateCmyk(newCmyk);
+      } else if (lastColourUpdated === 1) {
+        let newRgb = convert.hex.rgb(
+          `#${state.hexR}${state.hexG}${state.hexB}`
+        );
+        let newHsl = convert.hex.hsl(
+          `#${state.hexR}${state.hexG}${state.hexB}`
+        );
+        let newCmyk = convert.hex.cmyk(
+          `#${state.hexR}${state.hexG}${state.hexB}`
+        );
+        updateRgb(newRgb);
+        updateHsl(newHsl);
+        updateCmyk(newCmyk);
+      } else if (lastColourUpdated === 2) {
+        let newRgb = convert.hsl.rgb(state.hslH, state.hslS, state.hslL);
+        let newHex = convert.hsl.hex(state.hslH, state.hslS, state.hslL);
+        let newCmyk = convert.hsl.cmyk(state.hslH, state.hslS, state.hslL);
+        updateRgb(newRgb);
+        updateHex(newHex);
+        updateCmyk(newCmyk);
+      } else if (lastColourUpdated === 3) {
+        let newRgb = convert.cmyk.rgb(
+          state.cmykC,
+          state.cmykM,
+          state.cmykY,
+          state.cmykK
+        );
+        let newHex = convert.cmyk.hex(
+          state.cmykC,
+          state.cmykM,
+          state.cmykY,
+          state.cmykK
+        );
+        let newHsl = convert.cmyk.hsl(
+          state.cmykC,
+          state.cmykM,
+          state.cmykY,
+          state.cmykK
+        );
+        updateRgb(newRgb);
+        updateHex(newHex);
+        updateHsl(newHsl);
+      }
+    };
+    convertColours();
+    setColour(`rgb(${state.rgbR}, ${state.rgbG}, ${state.rgbB})`);
+  }, [
+    state.rgbR,
+    state.rgbG,
+    state.rgbB,
+    state.hexR,
+    state.hexG,
+    state.hexB,
+    state.hslH,
+    state.hslS,
+    state.hslL,
+    state.cmykC,
+    state.cmykM,
+    state.cmykY,
+    state.cmykK,
+    lastColourUpdated,
+  ]);
 
   return (
     <>
