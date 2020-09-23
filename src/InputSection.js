@@ -7,8 +7,7 @@ import HexField from "./ColourFields/HexField";
 import HslField from "./ColourFields/HslField";
 import CmykField from "./ColourFields/CmykField";
 
-const InputSection = () => {
-  const [colour, setColour] = useState("black");
+const InputSection = (props) => {
   const [lastColourUpdated, setLastColourUpdated] = useState();
 
   const [state, setState] = useState({
@@ -128,7 +127,7 @@ const InputSection = () => {
       }
     };
     convertColours();
-    setColour(`#${state.hexR}${state.hexG}${state.hexB}`);
+    props.handleColourChange(`#${state.hexR}${state.hexG}${state.hexB}`);
   }, [
     state.rgbR,
     state.rgbG,
@@ -144,13 +143,14 @@ const InputSection = () => {
     state.cmykY,
     state.cmykK,
     lastColourUpdated,
+    props
   ]);
 
   return (
     <>
       <div>
         <Typography>Input Colour</Typography>
-        <ColourDisplayBox colour={colour} />
+        <ColourDisplayBox colour={props.colour} />
         <RgbField
           onChangeR={handleChange("rgbR")}
           onChangeG={handleChange("rgbG")}
