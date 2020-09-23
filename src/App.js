@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import convert from "color-convert";
 import { makeStyles } from "@material-ui/core";
 import InputSection from "./InputSection";
 import OutputSection from "./OutputSection";
@@ -6,19 +7,35 @@ import OutputSection from "./OutputSection";
 const useStyles = makeStyles(() => ({
   pageContainer: {
     display: "flex",
+    flexDirection: "column", // This will eventually be set to row
     justifyContent: "space-around",
     padding: 10,
   },
 }));
 
 function App() {
-  const [colour, setColour] = useState("#000");
+  const [inputColour, setInputColour] = useState("#000");
   const classes = useStyles();
+
+  const calculateComplementary = () => {
+    const rgbValues = convert.hex.rgb(inputColour);
+    console.log(rgbValues);
+    const complementaryValues = [];
+    rgbValues.forEach((colourElement, idx) => {
+      complementaryValues[idx] = 255 - colourElement;
+    });
+  };
 
   return (
     <>
       <div className={classes.pageContainer}>
-        <InputSection colour={colour} handleColourChange={setColour} />
+        <InputSection
+          colour={inputColour}
+          handleColourChange={setInputColour}
+        />
+        <button style={{ marginTop: 20 }} onClick={calculateComplementary}>
+          Calcuate complementary colour
+        </button>
         {/* <OutputSection /> */}
       </div>
     </>

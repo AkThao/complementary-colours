@@ -23,7 +23,7 @@ const InputSection = (props) => {
     cmykC: 0,
     cmykM: 0,
     cmykY: 0,
-    cmykK: 0,
+    cmykK: 100,
   });
 
   const updateRgb = (newRgb) => {
@@ -143,7 +143,7 @@ const InputSection = (props) => {
     state.cmykY,
     state.cmykK,
     lastColourUpdated,
-    props
+    props,
   ]);
 
   return (
