@@ -15,15 +15,16 @@ const useStyles = makeStyles(() => ({
 
 function App() {
   const [inputColour, setInputColour] = useState("#000");
+  const [outputColour, setOutputColour] = useState("#000");
   const classes = useStyles();
 
   const calculateComplementary = () => {
     const rgbValues = convert.hex.rgb(inputColour);
-    console.log(rgbValues);
     const complementaryValues = [];
     rgbValues.forEach((colourElement, idx) => {
       complementaryValues[idx] = 255 - colourElement;
     });
+    setOutputColour(`#${convert.rgb.hex(...complementaryValues)}`);
   };
 
   return (
@@ -36,7 +37,7 @@ function App() {
         <button style={{ marginTop: 20 }} onClick={calculateComplementary}>
           Calcuate complementary colour
         </button>
-        {/* <OutputSection /> */}
+        <OutputSection colour={outputColour} />
       </div>
     </>
   );
