@@ -128,7 +128,7 @@ const InputSection = () => {
       }
     };
     convertColours();
-    setColour(`rgb(${state.rgbR}, ${state.rgbG}, ${state.rgbB})`);
+    setColour(`#${state.hexR}${state.hexG}${state.hexB}`);
   }, [
     state.rgbR,
     state.rgbG,
