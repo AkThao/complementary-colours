@@ -18,13 +18,24 @@ const OutputSection = (props) => {
         <Typography>Complementary Colour</Typography>
         <ColourDisplayBox colour={props.colour} />
         <RgbField value={[rgb[0], rgb[1], rgb[2]]} />
-        <HexField
-          value={[
-            props.colour.slice(1, 3),
-            props.colour.slice(3, 5),
-            props.colour.slice(5, 7),
-          ]}
-        />
+        {props.colour.length === 4 ? (
+          <HexField
+            value={[
+              props.colour.slice(1, 2),
+              props.colour.slice(2, 3),
+              props.colour.slice(3, 4),
+            ]}
+          />
+        ) : (
+          <HexField
+            value={[
+              props.colour.slice(1, 3),
+              props.colour.slice(3, 5),
+              props.colour.slice(5, 7),
+            ]}
+          />
+        )}
+
         <HslField value={[hsl[0], hsl[1], hsl[2]]} />
         <CmykField value={[cmyk[0], cmyk[1], cmyk[2], cmyk[3]]} />
       </div>

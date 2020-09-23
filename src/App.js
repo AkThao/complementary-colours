@@ -7,7 +7,6 @@ import OutputSection from "./OutputSection";
 const useStyles = makeStyles(() => ({
   pageContainer: {
     display: "flex",
-    flexDirection: "column", // This will eventually be set to row
     justifyContent: "space-around",
     padding: 10,
   },
