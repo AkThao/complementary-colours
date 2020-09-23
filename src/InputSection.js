@@ -53,7 +53,7 @@ const InputSection = (props) => {
 
   const handleChange = (prop) => (e) => {
     if (e.target.value === "") {
-      setState({ ...state, [prop]: 0 });
+      setState({ ...state, [prop]: "" });
     } else {
       if (prop.slice(0, -1) === "hex") {
         setState({ ...state, [prop]: e.target.value });
