@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
   pageContainer: {
     display: "flex",
     justifyContent: "space-around",
-    padding: 10,
+    padding: 20,
   },
 }));
 
@@ -33,7 +33,7 @@ function App() {
           colour={inputColour}
           handleColourChange={setInputColour}
         />
-        <button style={{ marginTop: 20 }} onClick={calculateComplementary}>
+        <button onClick={calculateComplementary}>
           Calcuate complementary colour
         </button>
         <OutputSection colour={outputColour} />
