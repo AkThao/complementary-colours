@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import convert from "color-convert";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Button } from "@material-ui/core";
+import ForwardIcon from "@material-ui/icons/Forward";
 import InputSection from "./InputSection";
 import OutputSection from "./OutputSection";
 
@@ -33,9 +34,9 @@ function App() {
           colour={inputColour}
           handleColourChange={setInputColour}
         />
-        <button onClick={calculateComplementary}>
-          Calcuate complementary colour
-        </button>
+        <Button onClick={calculateComplementary}>
+          <ForwardIcon />
+        </Button>
         <OutputSection colour={outputColour} />
       </div>
     </>
