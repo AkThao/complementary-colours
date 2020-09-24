@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import convert from "color-convert";
-import { Typography } from "@material-ui/core";
+import { Typography, makeStyles } from "@material-ui/core";
 import ColourDisplayBox from "./ColourDisplayBox";
 import RgbField from "./ColourFields/RgbField";
 import HexField from "./ColourFields/HexField";
 import HslField from "./ColourFields/HslField";
 import CmykField from "./ColourFields/CmykField";
 
-const InputSection = (props) => {
+const useStyles = makeStyles((theme) => ({
+  title: theme.title,
+}));
+
+export default (props) => {
+  const classes = useStyles();
+
   const [lastColourUpdated, setLastColourUpdated] = useState();
 
   const [state, setState] = useState({
@@ -149,36 +155,39 @@ const InputSection = (props) => {
   return (
     <>
       <div>
-        <Typography>Input Colour</Typography>
+        <Typography className={classes.title}>Input Colour</Typography>
         <ColourDisplayBox colour={props.colour} />
         <RgbField
           onChangeR={handleChange("rgbR")}
           onChangeG={handleChange("rgbG")}
           onChangeB={handleChange("rgbB")}
           value={[state.rgbR, state.rgbG, state.rgbB]}
-        />
+          input={true}
+          />
         <HexField
           onChangeR={handleChange("hexR")}
           onChangeG={handleChange("hexG")}
           onChangeB={handleChange("hexB")}
           value={[state.hexR, state.hexG, state.hexB]}
-        />
+          input={true}
+          input={true}
+          />
         <HslField
           onChangeH={handleChange("hslH")}
           onChangeS={handleChange("hslS")}
           onChangeL={handleChange("hslL")}
           value={[state.hslH, state.hslS, state.hslL]}
-        />
+          input={true}
+          />
         <CmykField
           onChangeC={handleChange("cmykC")}
           onChangeM={handleChange("cmykM")}
           onChangeY={handleChange("cmykY")}
           onChangeK={handleChange("cmykK")}
           value={[state.cmykC, state.cmykM, state.cmykY, state.cmykK]}
+          input={true}
         />
       </div>
     </>
   );
 };
-
-export default InputSection;

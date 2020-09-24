@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
     height: 200,
     border: "2px solid black",
     borderRadius: 20,
+    margin: "20px 0px 40px 0px",
     backgroundColor: props => props.colour,
   },
 }));

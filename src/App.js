@@ -11,6 +11,30 @@ const useStyles = makeStyles(() => ({
     justifyContent: "space-around",
     padding: 20,
   },
+  button: {
+    height: 80,
+    width: 200,
+    alignSelf: "center",
+    backgroundColor: "#7bdced",
+    border: "1px solid black",
+    boxShadow: "2px 2px #666",
+    "&:hover": {
+      backgroundColor: "#11aa00",
+      transition: "background-color 0.4s",
+      "& $arrow": {
+        fontSize: 75,
+      },
+    },
+    "&:active": {
+      boxShadow: "none",
+      transform: "translate(2px, 2px)",
+      transition: "box-shadow transform 0.4s",
+    },
+  },
+  arrow: {
+    fontSize: 60,
+    transition: "font-size 0.4s",
+  },
 }));
 
 function App() {
@@ -34,8 +58,8 @@ function App() {
           colour={inputColour}
           handleColourChange={setInputColour}
         />
-        <Button onClick={calculateComplementary}>
-          <ForwardIcon />
+        <Button onClick={calculateComplementary} className={classes.button}>
+          <ForwardIcon className={classes.arrow} />
         </Button>
         <OutputSection colour={outputColour} />
       </div>
