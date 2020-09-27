@@ -15,6 +15,18 @@ const useStyles = makeStyles((theme) => ({
   headerTitle: theme.headerTitle,
   iconButton: theme.iconButton,
   menuIcon: theme.menuIcon,
+  menu: {
+    border: "1px solid black",
+    backgroundColor: "#fbeec1",
+  },
+  menuItem: {
+    fontSize: 20,
+    fontWeight: "bold",
+    "&:hover": {
+      backgroundColor: "#bc986a",
+      color: "#436795",
+    },
+  },
 }));
 
 export default (props) => {
@@ -36,6 +48,10 @@ export default (props) => {
           <MenuIcon className={classes.menuIcon} />
         </IconButton>
         <Menu
+          classes={{
+            paper: classes.menu,
+          }}
+          elevation={0}
           onClose={handleCloseMenu}
           open={props.open}
           anchorEl={props.menuAnchor}
@@ -48,8 +64,18 @@ export default (props) => {
             horizontal: "right",
           }}
         >
-          <MenuItem onClick={() => handleCloseMenu("home")}>Home</MenuItem>
-          <MenuItem onClick={() => handleCloseMenu("about")}>About</MenuItem>
+          <MenuItem
+            className={classes.menuItem}
+            onClick={() => handleCloseMenu("home")}
+          >
+            Home
+          </MenuItem>
+          <MenuItem
+            className={classes.menuItem}
+            onClick={() => handleCloseMenu("about")}
+          >
+            About
+          </MenuItem>
         </Menu>
         <Typography className={classes.headerTitle}>
           Complementary Colour Calculator
