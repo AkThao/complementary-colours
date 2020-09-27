@@ -1,4 +1,4 @@
-# Complementary Colour Picker
+# Complementary Colours
 
 Simple React app that takes an input colour, calculates the complementary colour and displays the output to the user.
 
