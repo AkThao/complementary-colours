@@ -5,6 +5,7 @@ import Header from "./Header";
 import ForwardIcon from "@material-ui/icons/Forward";
 import InputSection from "./InputSection";
 import OutputSection from "./OutputSection";
+import About from "./About";
 
 const useStyles = makeStyles((theme) => ({
   pageContainer: {
@@ -23,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const [inputColour, setInputColour] = useState("#000");
   const [outputColour, setOutputColour] = useState("#000");
+  const [menuAnchor, setMenuAnchor] = useState(null);
+  const open = Boolean(menuAnchor);
+  const [page, setPage] = useState("about");
   const classes = useStyles();
 
   const calculateComplementary = () => {
@@ -36,17 +40,27 @@ function App() {
 
   return (
     <>
-      <Header />
-      <div className={classes.pageContainer}>
-        <InputSection
-          colour={inputColour}
-          handleColourChange={setInputColour}
-        />
-        <Button onClick={calculateComplementary} className={classes.button}>
-          <ForwardIcon className={classes.arrow} />
-        </Button>
-        <OutputSection colour={outputColour} />
-      </div>
+      <Header
+        menuAnchor={menuAnchor}
+        setMenuAnchor={setMenuAnchor}
+        open={open}
+        setPage={setPage}
+      />
+
+      {page === "home" ? (
+        <div className={classes.pageContainer}>
+          <InputSection
+            colour={inputColour}
+            handleColourChange={setInputColour}
+          />
+          <Button onClick={calculateComplementary} className={classes.button}>
+            <ForwardIcon className={classes.arrow} />
+          </Button>
+          <OutputSection colour={outputColour} />
+        </div>
+      ) : (
+        <About />
+      )}
     </>
   );
 }

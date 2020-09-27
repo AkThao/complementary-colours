@@ -8,7 +8,7 @@ export default createMuiTheme({
     borderBottom: "1px solid black",
   },
   headerTitle: {
-    color: grey[300],
+    color: "#436795",
     fontSize: 25,
     fontWeight: "bold",
     marginLeft: 20,
@@ -17,7 +17,7 @@ export default createMuiTheme({
     "@media (max-width: 350px)": { textAlign: "right" },
   },
   iconButton: {
-    color: grey[300],
+    color: "#436795",
   },
   menuIcon: {
     fontSize: 30,
