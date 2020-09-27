@@ -9,6 +9,7 @@ import CmykField from "./ColourFields/CmykField";
 
 const useStyles = makeStyles((theme) => ({
   title: theme.title,
+  sectionContainer: theme.sectionContainer,
 }));
 
 export default (props) => {
@@ -19,7 +20,7 @@ export default (props) => {
 
   return (
     <>
-      <div>
+      <div className={classes.sectionContainer}>
         <Typography className={classes.title}>Complementary Colour</Typography>
         <ColourDisplayBox colour={props.colour} />
         <RgbField value={[rgb[0], rgb[1], rgb[2]]} input={false} />

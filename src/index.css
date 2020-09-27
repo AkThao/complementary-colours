@@ -7,8 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: lavender; */
-  background-image: linear-gradient(lightslategrey, lavender, lightslategrey);
+  background-color: #fbeec1;
 }
 
 code {

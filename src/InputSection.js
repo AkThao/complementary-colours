@@ -9,6 +9,7 @@ import CmykField from "./ColourFields/CmykField";
 
 const useStyles = makeStyles((theme) => ({
   title: theme.title,
+  sectionContainer: theme.sectionContainer,
 }));
 
 export default (props) => {
@@ -154,7 +155,7 @@ export default (props) => {
 
   return (
     <>
-      <div>
+      <div className={classes.sectionContainer}>
         <Typography className={classes.title}>Input Colour</Typography>
         <ColourDisplayBox colour={props.colour} />
         <RgbField
@@ -169,7 +170,6 @@ export default (props) => {
           onChangeG={handleChange("hexG")}
           onChangeB={handleChange("hexB")}
           value={[state.hexR, state.hexG, state.hexB]}
-          input={true}
           input={true}
           />
         <HslField

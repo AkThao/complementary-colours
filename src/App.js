@@ -1,40 +1,23 @@
 import React, { useState } from "react";
 import convert from "color-convert";
 import { makeStyles, Button } from "@material-ui/core";
+import Header from "./Header";
 import ForwardIcon from "@material-ui/icons/Forward";
 import InputSection from "./InputSection";
 import OutputSection from "./OutputSection";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   pageContainer: {
+    marginTop: theme.header.height - 20,
     display: "flex",
     justifyContent: "space-around",
     padding: 20,
-  },
-  button: {
-    height: 80,
-    width: 200,
-    alignSelf: "center",
-    backgroundColor: "#7bdced",
-    border: "1px solid black",
-    boxShadow: "2px 2px #666",
-    "&:hover": {
-      backgroundColor: "#11aa00",
-      transition: "background-color 0.4s",
-      "& $arrow": {
-        fontSize: 75,
-      },
-    },
-    "&:active": {
-      boxShadow: "none",
-      transform: "translate(2px, 2px)",
-      transition: "box-shadow transform 0.4s",
+    "@media (max-width: 1300px)": {
+      flexDirection: "column",
     },
   },
-  arrow: {
-    fontSize: 60,
-    transition: "font-size 0.4s",
-  },
+  button: theme.button,
+  arrow: theme.arrow,
 }));
 
 function App() {
@@ -53,6 +36,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div className={classes.pageContainer}>
         <InputSection
           colour={inputColour}

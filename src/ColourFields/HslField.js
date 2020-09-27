@@ -9,6 +9,8 @@ import {
 import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
+  colourSection: theme.colourSection,
+  colourField: theme.colourField,
   textField: theme.textField,
   textFieldCustomBorder: {
     "& .MuiOutlinedInput-notchedOutline": {
@@ -77,7 +79,7 @@ const HslField = (props) => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className={classes.colourSection}>
       <Tooltip
         arrow
         title={`Three HSL components, with ranges of 0-360${degree}, 0-100% and 0-100%`}
@@ -86,41 +88,46 @@ const HslField = (props) => {
           <span className={classes.label}>HSL</span>
         </Typography>
       </Tooltip>
-      <Tooltip arrow title={`Hue: 0-360${degree}`}>
-        <TextField
-          variant="outlined"
-          InputProps={{
-            endAdornment: (
-              <InputAdornment className={classes.inputAdornment} position="end">
-                {degree}
-              </InputAdornment>
-            ),
-            className: clsx(classes.textField, classes.textFieldCustomBorder),
-          }}
-          inputProps={{
-            min: 0,
-            max: 360,
-          }}
-          type="number"
-          placeholder={`0${degree}`}
-          onChange={props.onChangeH}
-          value={props.value[0]}
-          disabled={!props.input}
+      <div className={classes.colourField}>
+        <Tooltip arrow title={`Hue: 0-360${degree}`}>
+          <TextField
+            variant="outlined"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment
+                  className={classes.inputAdornment}
+                  position="end"
+                >
+                  {degree}
+                </InputAdornment>
+              ),
+              className: clsx(classes.textField, classes.textFieldCustomBorder),
+            }}
+            inputProps={{
+              min: 0,
+              max: 360,
+            }}
+            type="number"
+            placeholder={`0${degree}`}
+            onChange={props.onChangeH}
+            value={props.value[0]}
+            disabled={!props.input}
+          />
+        </Tooltip>
+        <TooltipTextField
+          title="Saturation: 0-100%"
+          value={props.value[1]}
+          onChange={props.onChangeS}
+          input={props.input}
         />
-      </Tooltip>
-      <TooltipTextField
-        title="Saturation: 0-100%"
-        value={props.value[1]}
-        onChange={props.onChangeS}
-        input={props.input}
-      />
-      <TooltipTextField
-        title="Lightness: 0-100%"
-        value={props.value[2]}
-        onChange={props.onChangeL}
-        input={props.input}
-      />
-    </>
+        <TooltipTextField
+          title="Lightness: 0-100%"
+          value={props.value[2]}
+          onChange={props.onChangeL}
+          input={props.input}
+        />
+      </div>
+    </div>
   );
 };
 

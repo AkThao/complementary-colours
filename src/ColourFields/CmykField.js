@@ -9,6 +9,8 @@ import {
 import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
+  colourSection: theme.colourSection,
+  colourField: theme.colourField,
   textField: theme.textField,
   textFieldCustomBorder: {
     "& .MuiOutlinedInput-notchedOutline": {
@@ -80,41 +82,43 @@ const CmykField = (props) => {
   const classes = useStyles();
 
   return (
-    <>
+    <div className={classes.colourSection}>
       <Tooltip arrow title="Four CMYK components, each in the range 0-100%">
         <Typography className={classes.labelContainer}>
           <span className={classes.label}>CMYK</span>
         </Typography>
       </Tooltip>
-      <TooltipTextField
-        title="Cyan: 0-100%"
-        value={props.value[0]}
-        onChange={props.onChangeC}
-        colour="cyan"
-        input={props.input}
-      />
-      <TooltipTextField
-        title="Magenta: 0-100%"
-        value={props.value[1]}
-        onChange={props.onChangeM}
-        colour="magenta"
-        input={props.input}
-      />
-      <TooltipTextField
-        title="Yellow: 0-100%"
-        value={props.value[2]}
-        onChange={props.onChangeY}
-        colour="yellow"
-        input={props.input}
-      />
-      <TooltipTextField
-        title="Black: 0-100%"
-        value={props.value[3]}
-        onChange={props.onChangeK}
-        colour="black"
-        input={props.input}
-      />
-    </>
+      <div className={classes.colourField}>
+        <TooltipTextField
+          title="Cyan: 0-100%"
+          value={props.value[0]}
+          onChange={props.onChangeC}
+          colour="cyan"
+          input={props.input}
+        />
+        <TooltipTextField
+          title="Magenta: 0-100%"
+          value={props.value[1]}
+          onChange={props.onChangeM}
+          colour="magenta"
+          input={props.input}
+        />
+        <TooltipTextField
+          title="Yellow: 0-100%"
+          value={props.value[2]}
+          onChange={props.onChangeY}
+          colour="yellow"
+          input={props.input}
+        />
+        <TooltipTextField
+          title="Black: 0-100%"
+          value={props.value[3]}
+          onChange={props.onChangeK}
+          colour="black"
+          input={props.input}
+        />
+      </div>
+    </div>
   );
 };
 
