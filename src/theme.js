@@ -45,6 +45,9 @@ export default createMuiTheme({
     padding: 10,
     borderRadius: 5,
     marginLeft: 5,
+    "@media (max-width: 450px)": {
+      marginLeft: 0,
+    }
   },
   textField: {
     height: 40,
