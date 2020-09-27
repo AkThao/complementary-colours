@@ -58,6 +58,34 @@ export default () => {
         </Link>
         .
       </Typography>
+      <Typography className={classes.text}>
+        Source code is available at{" "}
+        <Link
+          href="https://github.com/AkThao/complementary-colours"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub
+        </Link>
+        .
+      </Typography>
+      <Typography className={classes.text}>
+        I hope you enjoy using the app as much as I did making it.
+      </Typography>
+      <Typography className={classes.text}>
+        To suggest any improvements, you can contact me via email at{" "}
+        <Link
+          href="mailto:akaash.thao@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          akaash.thao@gmail.com
+        </Link>{" "}
+        or via Discord at AkThao#2281.
+      </Typography>
+      <Typography className={classes.text}>
+        Made by Akaash Thao in 2020
+      </Typography>
     </div>
   );
 };
