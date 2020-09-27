@@ -62,11 +62,11 @@ const HexField = (props) => {
 
   return (
     <div className={classes.colourSection}>
-      <Tooltip arrow title="Three hex components, each in the range 00-FF">
-        <Typography className={classes.labelContainer}>
+      <Typography className={classes.labelContainer}>
+        <Tooltip arrow title="Three hex components, each in the range 00-FF">
           <span className={classes.label}>Hex (#)</span>
-        </Typography>
-      </Tooltip>
+        </Tooltip>
+      </Typography>
       <div className={classes.colourField}>
         <TooltipTextField
           title="Red: 00-FF"

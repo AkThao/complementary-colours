@@ -64,11 +64,11 @@ const RgbField = (props) => {
 
   return (
     <div className={classes.colourSection}>
-      <Tooltip arrow title="Three RGB components, each in the range 0-255">
-        <Typography className={classes.labelContainer}>
+      <Typography className={classes.labelContainer}>
+        <Tooltip arrow title="Three RGB components, each in the range 0-255">
           <span className={classes.label}>RGB</span>
-        </Typography>
-      </Tooltip>
+        </Tooltip>
+      </Typography>
       <div className={classes.colourField}>
         <TooltipTextField
           title="Red: 0-255"

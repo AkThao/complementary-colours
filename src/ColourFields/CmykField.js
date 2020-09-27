@@ -83,11 +83,11 @@ const CmykField = (props) => {
 
   return (
     <div className={classes.colourSection}>
-      <Tooltip arrow title="Four CMYK components, each in the range 0-100%">
-        <Typography className={classes.labelContainer}>
+      <Typography className={classes.labelContainer}>
+        <Tooltip arrow title="Four CMYK components, each in the range 0-100%">
           <span className={classes.label}>CMYK</span>
-        </Typography>
-      </Tooltip>
+        </Tooltip>
+      </Typography>
       <div className={classes.colourField}>
         <TooltipTextField
           title="Cyan: 0-100%"

@@ -80,14 +80,14 @@ const HslField = (props) => {
 
   return (
     <div className={classes.colourSection}>
-      <Tooltip
-        arrow
-        title={`Three HSL components, with ranges of 0-360${degree}, 0-100% and 0-100%`}
-      >
-        <Typography className={classes.labelContainer}>
+      <Typography className={classes.labelContainer}>
+        <Tooltip
+          arrow
+          title={`Three HSL components, with ranges of 0-360${degree}, 0-100% and 0-100%`}
+        >
           <span className={classes.label}>HSL</span>
-        </Typography>
-      </Tooltip>
+        </Tooltip>
+      </Typography>
       <div className={classes.colourField}>
         <Tooltip arrow title={`Hue: 0-360${degree}`}>
           <TextField
