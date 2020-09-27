@@ -26,7 +26,7 @@ function App() {
   const [outputColour, setOutputColour] = useState("#000");
   const [menuAnchor, setMenuAnchor] = useState(null);
   const open = Boolean(menuAnchor);
-  const [page, setPage] = useState("about");
+  const [page, setPage] = useState("home");
   const classes = useStyles();
 
   const calculateComplementary = () => {
