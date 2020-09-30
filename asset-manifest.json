@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/complementary-colours/static/css/main.82323c69.chunk.css",
+    "main.js": "/complementary-colours/static/js/main.5b9f4856.chunk.js",
+    "main.js.map": "/complementary-colours/static/js/main.5b9f4856.chunk.js.map",
+    "runtime-main.js": "/complementary-colours/static/js/runtime-main.19e3d7e9.js",
+    "runtime-main.js.map": "/complementary-colours/static/js/runtime-main.19e3d7e9.js.map",
+    "static/js/2.9fb03c99.chunk.js": "/complementary-colours/static/js/2.9fb03c99.chunk.js",
+    "static/js/2.9fb03c99.chunk.js.map": "/complementary-colours/static/js/2.9fb03c99.chunk.js.map",
+    "index.html": "/complementary-colours/index.html",
+    "precache-manifest.fa75e7e814443f529c545ba442fbf46a.js": "/complementary-colours/precache-manifest.fa75e7e814443f529c545ba442fbf46a.js",
+    "service-worker.js": "/complementary-colours/service-worker.js",
+    "static/css/main.82323c69.chunk.css.map": "/complementary-colours/static/css/main.82323c69.chunk.css.map",
+    "static/js/2.9fb03c99.chunk.js.LICENSE.txt": "/complementary-colours/static/js/2.9fb03c99.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.19e3d7e9.js",
+    "static/js/2.9fb03c99.chunk.js",
+    "static/css/main.82323c69.chunk.css",
+    "static/js/main.5b9f4856.chunk.js"
+  ]
+}
