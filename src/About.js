@@ -81,7 +81,7 @@ export default () => {
         >
           akaash.thao@gmail.com
         </Link>{" "}
-        or via Discord at AkThao#2281.
+        or via Discord at akthao.
       </Typography>
       <Typography className={classes.text}>
         Made by Akaash Thao in 2020
