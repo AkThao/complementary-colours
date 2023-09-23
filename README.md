@@ -5,7 +5,5 @@ React web app that takes an input colour, calculates the complementary colour an
 
 ![screenshot of app](screenshot.png "App")
 
-Live demos available at:
+Live site available at:
 https://akthao.github.io/complementary-colours/
-and
-https://complementary-colours.herokuapp.com
